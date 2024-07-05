@@ -1,0 +1,54 @@
+.footer {
+  width: 100vw; /* Full width of the viewport */
+  background-color: #f0f0f0;
+  padding: 2vw;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between; /* Space the items evenly with space at the ends */
+  flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+
+.grid-item {
+  flex: 1;
+  min-width: 150px; /* Minimum width to ensure items don't get too small on smaller screens */
+  text-align: left;
+  padding: 10px;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.empty-grid {
+  flex: 1;
+}
+
+.grid-item div {
+  font-size: 95%;
+  margin-bottom: 10px;
+}
+
+.grid-item span {
+  font-size: 80%;
+  color: #555;
+}
+
+.grid-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-item ul li {
+  margin-bottom: 5px;
+}
+
+.grid-item ul li a {
+  font-size: 80%;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.grid-item ul li a:hover {
+  color: #8254ff;
+}

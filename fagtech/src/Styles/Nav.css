@@ -1,6 +1,10 @@
 nav {
   margin: 2vw;
-  background: #f9f9f9;
+  background: linear-gradient(
+    to right top,
+    #c0adf7,
+    #28195a
+  ); /* Gradient from top-left to bottom-right */
   padding: 1.5vh;
 }
 
@@ -19,12 +23,13 @@ nav {
 
 .menuItems li a {
   text-decoration: none;
-  color: #8f8f8f;
+  color: #ffffff;
   font-size: 95%;
   font-weight: 400;
   transition: all 0.5s ease-in-out;
   position: relative;
   text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Beautiful text shadow */
 }
 
 .menuItems li a::before {

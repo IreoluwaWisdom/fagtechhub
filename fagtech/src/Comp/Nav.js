@@ -22,6 +22,11 @@ const Nav = () => {
           </Link>
         </li>
         <li>
+          <Link to="/gallery" data-item="Gallery">
+            Gallery
+          </Link>
+        </li>
+        <li>
           <Link to="/blog" data-item="Blog">
             Blog
           </Link>

@@ -38,12 +38,12 @@
   padding: 0;
 }
 
-.grid-item ul li {
+/* .grid-item ul li {
   margin-bottom: 5px;
-}
+} */
 
 .grid-item ul li a {
-  font-size: 80%;
+  font-size: 75%;
   color: #555;
   text-decoration: none;
   transition: color 0.3s ease;

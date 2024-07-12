@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import { db } from "../config/firebase";
-import { doc, setDoc } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  collection,
+  query,
+  orderBy,
+  limit,
+  getDocs,
+  runTransaction,
+} from "firebase/firestore";
 import "../Styles/NewsLetterForm.css";
 
 const NewsletterForm = () => {
@@ -20,10 +29,32 @@ const NewsletterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await setDoc(doc(db, "newsletterDetails", formData.firstName), {
+      // Run transaction to increment the counter and get the new value
+      const lastEntryQuery = query(
+        collection(db, "newsletterDetails"),
+        orderBy("documentId", "desc"),
+        limit(1),
+      );
+      const lastEntrySnapshot = await getDocs(lastEntryQuery);
+      let lastEntryId = 0;
+
+      if (!lastEntrySnapshot.empty) {
+        lastEntryId = parseInt(
+          lastEntrySnapshot.docs[0].data().documentId.split("_")[1],
+        );
+      }
+
+      // Generate new document ID
+      const newDocumentId = `${formData.firstName}_${(lastEntryId + 1).toString().padStart(4, "0")}`;
+
+      // Add new document to Firestore
+      await setDoc(doc(db, "newsletterDetails", newDocumentId), {
+        documentId: newDocumentId, // Save the generated document ID as a field
+        firstName: formData.firstName,
         email: formData.email,
         whatsapp: formData.whatsapp,
       });
+
       setStatus({ message: "Subscription successful!", type: "success" });
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -32,8 +63,7 @@ const NewsletterForm = () => {
         type: "error",
       });
     } finally {
-      // Redirect user to a specific link after attempt
-      window.location.href = "https://thank-you.com"; // Change '/thank-you' to your desired URL
+      window.location.href = "https://www.example.com";
     }
   };
 

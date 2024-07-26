@@ -11,9 +11,10 @@ const Nav = () => {
             Home
           </Link>
         </li>
+
         <li>
-          <Link to="/academy" data-item="Academy">
-            Academy
+          <Link to="/learning" data-item="Learning Hub">
+            Learning Hub
           </Link>
         </li>
         <li>
@@ -21,24 +22,16 @@ const Nav = () => {
             Services
           </Link>
         </li>
+
         <li>
-          <Link to="/gallery" data-item="Gallery">
-            Gallery
+          <Link to="/spotlight" data-item="Explore Us">
+            EXPLORE US
           </Link>
         </li>
+
         <li>
           <Link to="/blog" data-item="Blog">
             Blog
-          </Link>
-        </li>
-        <li>
-          <Link to="/profile" data-item="Profile">
-            Profile
-          </Link>
-        </li>
-        <li>
-          <Link to="/about" data-item="About">
-            About
           </Link>
         </li>
       </ul>

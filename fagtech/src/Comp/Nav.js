@@ -14,7 +14,7 @@ const Nav = () => {
 
         <li>
           <Link to="/learning" data-item="Learning Hub">
-            Learning Hub
+            Learning
           </Link>
         </li>
         <li>
@@ -25,7 +25,7 @@ const Nav = () => {
 
         <li>
           <Link to="/spotlight" data-item="Explore Us">
-            EXPLORE US
+            EXPLORE
           </Link>
         </li>
 

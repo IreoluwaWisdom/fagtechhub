@@ -5,9 +5,9 @@ import Footer from "./Comp/Footer.js";
 import Home from "./Home/home.js";
 import Learning from "./Learning/learning.js";
 import Services from "./Services/services.js";
-import Spotlight from "./Spotlight.js";
+import GalleryAboutUs from "./Spotlight.js";
 import Blog from "./Blog/blog.js";
-import About from "./About/about.js";
+// import About from "./About/about.js";
 
 const App = () => {
   return (
@@ -19,8 +19,8 @@ const App = () => {
           <Route path="/learning" element={<Learning />} />
           <Route path="/services" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/spotlight" element={<Spotlight />} />
+          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/spotlight" element={<GalleryAboutUs />} />
         </Routes>
         <Footer />
       </div>
